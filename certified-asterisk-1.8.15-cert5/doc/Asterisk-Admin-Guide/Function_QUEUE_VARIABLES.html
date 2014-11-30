@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Asterisk Project : Function_QUEUE_VARIABLES</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
+
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            Asterisk Project : Function_QUEUE_VARIABLES
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on Jul 20, 2012 by <font color="#0050B2">wikibot</font>.
+				    </div>
+
+				    <h1><a name="Function_QUEUE_VARIABLES-QUEUEVARIABLES%28%29"></a>QUEUE_VARIABLES()</h1>
+
+<h3><a name="Function_QUEUE_VARIABLES-Synopsis"></a>Synopsis</h3>
+
+<p>Return Queue information in variables.</p>
+<h3><a name="Function_QUEUE_VARIABLES-Description"></a>Description</h3>
+
+
+
+<p>Makes the following queue variables available.</p>
+
+<p>Returns <tt>0</tt> if queue is found and setqueuevar is defined, <tt>-1</tt> otherwise.</p>
+
+<h3><a name="Function_QUEUE_VARIABLES-Syntax"></a>Syntax</h3>
+
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>QUEUE_VARIABLES(queuename)</pre>
+</div></div>
+<h5><a name="Function_QUEUE_VARIABLES-Arguments"></a>Arguments</h5>
+
+
+<ul>
+	<li><tt>queuename</tt>
+	<ul>
+		<li><tt>QUEUEMAX</tt> - Maxmimum number of calls allowed.</li>
+		<li><tt>QUEUESTRATEGY</tt> - The strategy of the queue.</li>
+		<li><tt>QUEUECALLS</tt> - Number of calls currently in the queue.</li>
+		<li><tt>QUEUEHOLDTIME</tt> - Current average hold time.</li>
+		<li><tt>QUEUECOMPLETED</tt> - Number of completed calls for the queue.</li>
+		<li><tt>QUEUEABANDONED</tt> - Number of abandoned calls.</li>
+		<li><tt>QUEUESRVLEVEL</tt> - Queue service level.</li>
+		<li><tt>QUEUESRVLEVELPERF</tt> - Current service level performance.</li>
+	</ul>
+	</li>
+</ul>
+
+
+<h3><a name="Function_QUEUE_VARIABLES-SeeAlso"></a>See Also</h3>
+
+
+<ul>
+	<li><a href="Application_Queue.html" title="Application_Queue">Application&#95;Queue</a></li>
+	<li><a href="Application_QueueLog.html" title="Application_QueueLog">Application&#95;QueueLog</a></li>
+	<li><a href="Application_AddQueueMember.html" title="Application_AddQueueMember">Application&#95;AddQueueMember</a></li>
+	<li><a href="Application_RemoveQueueMember.html" title="Application_RemoveQueueMember">Application&#95;RemoveQueueMember</a></li>
+	<li><a href="Application_PauseQueueMember.html" title="Application_PauseQueueMember">Application&#95;PauseQueueMember</a></li>
+	<li><a href="Application_UnpauseQueueMember.html" title="Application_UnpauseQueueMember">Application&#95;UnpauseQueueMember</a></li>
+	<li><a href="" title="Function_QUEUE_VARIABLES">Function&#95;QUEUE&#95;VARIABLES</a></li>
+	<li><a href="Function_QUEUE_MEMBER.html" title="Function_QUEUE_MEMBER">Function&#95;QUEUE&#95;MEMBER</a></li>
+	<li><a href="Function_QUEUE_MEMBER_COUNT.html" title="Function_QUEUE_MEMBER_COUNT">Function&#95;QUEUE&#95;MEMBER&#95;COUNT</a></li>
+	<li><a href="Function_QUEUE_EXISTS.html" title="Function_QUEUE_EXISTS">Function&#95;QUEUE&#95;EXISTS</a></li>
+	<li><a href="Function_QUEUE_WAITING_COUNT.html" title="Function_QUEUE_WAITING_COUNT">Function&#95;QUEUE&#95;WAITING&#95;COUNT</a></li>
+	<li><a href="Function_QUEUE_MEMBER_LIST.html" title="Function_QUEUE_MEMBER_LIST">Function&#95;QUEUE&#95;MEMBER&#95;LIST</a></li>
+	<li><a href="Function_QUEUE_MEMBER_PENALTY.html" title="Function_QUEUE_MEMBER_PENALTY">Function&#95;QUEUE&#95;MEMBER&#95;PENALTY</a></li>
+</ul>
+
+
+<h3><a name="Function_QUEUE_VARIABLES-ImportVersion"></a>Import Version</h3>
+
+<p>This documentation was imported from Asterisk Version SVN-branch-1.8-r370275</p>
+
+				    
+                                            <div class="tabletitle">
+                            <a name="comments">
+                                <h2>Comments:</h2>
+                            </a>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-10649975"></a>
+                                    <font class="smallfont">
+<p>can you please, light my problem with this function:</p>
+
+<p>i had been set QueueMax variable in configuration files, and know in dialplan wana check it some wheres... by the way do the fallowing:</p>
+
+<div class='panelMacro'><table class='noteMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/warning.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td>exten =&gt; support-provinces,n,Set(err=${QUEUE_VARIABLES(support-provinces)})<br/>
+exten =&gt; support-provinces,n,Noop(rtncode was ${err}, QueueMax was:${QUEUEMAX}</td></tr></table></div>
+
+<div class='panelMacro'><table class='noteMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/warning.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td>and the result is:<br/>
+&#8211; Executing <span class="error">&#91;support-provinces@from-as5300:5&#93;</span> Set("OOH323/AS5300-10539", "err=-1") in new stack<br/>
+&#8211; Executing <span class="error">&#91;support-provinces@from-as5300:6&#93;</span> NoOp("OOH323/AS5300-10539", "rtncode was -1, QueueMax was:") in new stack</td></tr></table></div>
+
+
+
+<p>CallCenter*CLI&gt; queue show support-provinces <br/>
+support-provinces has 0 calls (<b>max 10</b>) in 'leastrecent' strategy (0s holdtime, 0s talktime), W:0, C:0, A:0, SL:0.0% within 120s<br/>
+   No Members<br/>
+   No Callers</p>
+
+</font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/comment_16.gif" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by shayne.alone@gmail.com at Dec 25, 2010 01:53
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-10649986"></a>
+                                    <font class="smallfont"><p>Make sure <tt>setqueuevar</tt> is turned on in queues.conf inside each queue definition for any queues you want to get information on.</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/comment_16.gif" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by channelz at Dec 25, 2010 23:15
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-10649988"></a>
+                                    <font class="smallfont"><p>thanks...<br/>
+that was the reason!<br/>
+definition per queue.<br/>
+:^)</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/comment_16.gif" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by shayne.alone@gmail.com at Dec 26, 2010 03:10
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    			    </td>
+		    </tr>
+	    </table>
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td height="12" background="https://wiki.asterisk.org/wiki/images/border/border_bottom.gif"><img src="images/border/spacer.gif" width="1" height="1" border="0"/></td>
+			</tr>
+		    <tr>
+			    <td align="center"><font color="grey">Document generated by Confluence on Nov 02, 2012 17:25</font></td>
+		    </tr>
+	    </table>
+    </body>
+</html>

@@ -1,0 +1,3 @@
+<member name="func_shell" displayname="Returns the output of a shell command" remove_on_change="funcs/func_shell.o funcs/func_shell.so">
+	<support_level>core</support_level>
+</member>

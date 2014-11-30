@@ -1,0 +1,5 @@
+<member name="cdr_odbc" displayname="ODBC CDR Backend" remove_on_change="cdr/cdr_odbc.o cdr/cdr_odbc.so">
+	<depend>res_odbc</depend>
+	<support_level>extended</support_level>
+	<defaultenabled>no</defaultenabled>
+</member>

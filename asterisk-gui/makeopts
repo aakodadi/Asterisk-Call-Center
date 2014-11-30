@@ -1,0 +1,40 @@
+CC=gcc
+HOST_CC=cc
+
+BUILD_PLATFORM=i686-pc-linux-gnu
+BUILD_CPU=i686
+BUILD_VENDOR=pc
+BUILD_OS=linux-gnu
+
+HOST_PLATFORM=i686-pc-linux-gnu
+HOST_CPU=i686
+HOST_VENDOR=pc
+HOST_OS=linux-gnu
+
+PROC=i686
+OSARCH=linux-gnu
+OSREV=2.6.32-57-generic
+
+INSTALL=/usr/bin/install -c
+BASENAME=/usr/bin/basename
+
+ZAPTEL_INCLUDE=
+PBX_ZAPTEL=0
+
+prefix = /usr
+exec_prefix = ${prefix}
+
+bindir = ${exec_prefix}/bin
+datarootdir = ${prefix}/share
+datadir = ${datarootdir}
+includedir = ${prefix}/include
+infodir = ${datarootdir}/info
+libdir = ${exec_prefix}/lib
+libexecdir = ${exec_prefix}/libexec
+localstatedir = /var
+mandir = ${datarootdir}/man
+sbindir = ${exec_prefix}/sbin
+sharedstatedir = ${prefix}/com
+sysconfdir = /etc
+
+
